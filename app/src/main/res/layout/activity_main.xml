@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.example.biz_41.View.MainActivity"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+   <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+       android:id="@+id/selectedView"
+       android:text=""
+       android:textColor="#61c1f1"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layoutAnimation="@anim/layout_fall_down_anim"
+        android:id="@+id/rv"
+
+        >
+
+    </android.support.v7.widget.RecyclerView>
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#61c1f1"
+    android:textColor="#ffffff"
+    android:text="@string/show_more"
+    android:textSize="25dp"
+    android:layout_gravity="center"
+    android:onClick="showMore"
+    />
+
+
+
+
+</LinearLayout>
+    </ScrollView>

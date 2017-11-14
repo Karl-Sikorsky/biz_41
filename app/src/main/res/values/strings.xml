@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name"> </string>
+    <string name="description">Опис товарів</string>
+    <string name="telephon">Телефон</string>
+    <string name="category">Категорія</string>
+    <string name="city">Місто</string>
+
+    <string name="enterprise_name">Імя підприємства</string>
+    <string name="action_search"> </string>
+    <string name="of_branches">По галузях</string>
+    <string name="of_regions">По регіонах</string>
+    <string name="products">Товари</string>
+    <string name="products_list">Всі товари</string>
+    <string name="info">Інформація</string>
+    <string name="head">керівник</string>
+    <string name="adres">Адреса</string>
+    <string name="product_name">Назва продукту</string>
+    <string name="product_price">Ціна продукту</string>
+    <string name="buy">Замовити</string>
+    <string name="price">Ціна</string>
+    <string name="description_big">Большое описание товара, состоящее из множества строк. вставлено сбда чтобы продемонстрировать возможность прокрутки Большое описание товара, состоящее из множества строк. вставлено сбда чтобы продемонстрировать возможность прокрутки Большое описание товара, состоящее из множества строк. вставлено сбда чтобы продемонстрировать возможность прокрутки Большое описание товара, состоящее из множества строк. вставлено сбда чтобы продемонстрировать возможность прокрутки</string>
+    <string name="your_name">Ваше имя*</string>
+    <string name="your_company">Ваше предприятие</string>
+    <string name="your_telephon">Ваш телефон*</string>
+    <string name="your_mail">Ваша почта</string>
+    <string name="your_comment">Ваш комментарий</string>
+    <string name="order">Отправить</string>
+    <string name="contacts">Контакти</string>
+    <string name="ent_name">Назва підприємства</string>
+    <string name="enable_cash">Ввімкнути кешування</string>
+    <string name="for_one">підприємств на сторінці</string>
+    <string name="show">Відображати</string>
+    <string name="ready">Готово</string>
+    <string name="show_more">ПОКАЗАТИ ЩЕ</string>
+    <string name="categories_done">ГОТОВО</string>
+    <string name="more_info">отримати більше інформації</string>
+    <string name="name">Ваше ім\'я</string>
+    <string name="adress">Ваша електронна адреса</string>
+    <string name="phone">Ваш телефон</string>
+    <string name="descr_order">Короткий опис звернення</string>
+    <string name="send_order">Відправити запит</string>
+    <string name="preview">Заповніть форму та наші представники звяжуться з вами для обговорення доступу до повного пакету інформації</string>
+    <string name="upgrade_company">підняти рейтинг підприємства</string>
+    <string name="_10">Підніміть підприємство до списку найрелевантніших для всіх користувачів, більше зірок - більше клієнтів.\n Послуга платна, вартість - 10 грн</string>
+    <string name="shoosing_title_text">Оберіть план для реклами</string>
+    <string name="_1_5">реклама на 1 тиждень (5грн)</string>
+    <string name="_15">реклама на місяць (15грн)</string>
+    <string name="_100">реклама на рік (100грн)</string>
+    <string name="_150">реклама назавжди (150грн)</string>
+    <string name="next">ДАЛІ</string>
+
+
+</resources>
