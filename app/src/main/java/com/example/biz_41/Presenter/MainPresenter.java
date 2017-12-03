@@ -100,6 +100,11 @@ public class MainPresenter implements AllPresenter {
     }
 
     @Override
+    public void setSlug(String slug) {
+
+    }
+
+    @Override
     public void setQueryParams(String categoryIds, String regionIds) {
         this.categoryIds = categoryIds;
         this.regionIds = regionIds;

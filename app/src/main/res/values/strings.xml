@@ -48,6 +48,7 @@
     <string name="_100">реклама на рік (100грн)</string>
     <string name="_150">реклама назавжди (150грн)</string>
     <string name="next">ДАЛІ</string>
+    <string name="action_back" />
 
 
 </resources>

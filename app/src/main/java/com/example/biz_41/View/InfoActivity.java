@@ -23,6 +23,7 @@ import com.example.biz_41.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -56,96 +57,31 @@ public class InfoActivity extends AppCompatActivity implements AllView {
         setContentView(R.layout.activity_info);
         getSupportActionBar().hide();
 
+        presenter = new InfoPresenter(this, getApplicationContext());
         currentCompany = new Company();
         Intent intent = getIntent();
-        Log.d("INTENTLOG", "intent still ok before");
+        Log.d("infoPresenter", "intent still ok before");
         try {
-            currentCompany.setName(intent.getStringExtra("company_name"));
-            if (currentCompany.getName().length()>26)currentCompany.setName(currentCompany.getName().substring(0,23)+"...");
+            presenter.setSlug(intent.getStringExtra("company_slug"));
+            /*if (currentCompany.getName().length()>26)currentCompany.setName(currentCompany.getName().substring(0,23)+"...");
             ent_name = (TextView) findViewById(R.id.textView2);
-            ent_name.setText(currentCompany.getName());
-            Log.d("INTENTLOG", "name still ok");
-        } catch (Exception e) {
-        }
-        try {
-            currentCompany.setEmail(intent.getStringExtra("company_mail"));
-            ent_mail = (TextView) findViewById(R.id.textMail);
-            ent_mail.setText(currentCompany.getEmails().get(0));
-            Log.d("INTENTLOG", "mail still ok");
-        } catch (Exception e) {
-        }
-        try {
-            currentCompany.setSkype(intent.getStringExtra("company_skype"));
-            ent_mail = (TextView) findViewById(R.id.textMail);
-            if(currentCompany.getSkype()!=null) {
-                ent_mail.setText(ent_mail.getText() + "\nSkype id:" + currentCompany.getSkype());
-                Log.d("INTENTLOG", "skype still ok");
-                Log.d("INTENTLOG", currentCompany.getSkype());
-            }
-        } catch (Exception e) {
-        }
-        try {
-            currentCompany.setSitesUrl(intent.getStringExtra("company_sitesUrl"));
-            ent_mail = (TextView) findViewById(R.id.textMail);
-            if(currentCompany.getSkype()!=null) {
-            ent_mail.setText(ent_mail.getText()+ "\nSite URL::" + currentCompany.getSitesUrl());
-            Log.d("INTENTLOG", "site still ok");}
-        } catch (Exception e) {
-        }
-        try {
-            currentCompany.setRegionName(intent.getStringExtra("company_reg"));
-            ent_reg = (TextView) findViewById(R.id.textRegion);
-            ent_reg.setText(currentCompany.getRegionName());
-            Log.d("INTENTLOG", "reg still ok");
-        } catch (Exception e) {
-        }
-        try {
-            currentCompany.setDescription(intent.getStringExtra("company_description"));
-            ent_reg = (TextView) findViewById(R.id.textRegion);
-            if(currentCompany.getDescription()!=null) {
-            ent_reg.setText(ent_reg.getText() + "\n"+currentCompany.getDescription());
-            Log.d("INTENTLOG", "description still ok");}
-        } catch (Exception e) {
-        }
-        try {
-            currentCompany.setYearOfFoundation(intent.getStringExtra("company_year"));
-            ent_reg = (TextView) findViewById(R.id.textRegion);
-            if(currentCompany.getYearOfFoundation()!=null) {
-            ent_reg.setText(ent_reg.getText() + "\n"+currentCompany.getYearOfFoundation());
-            Log.d("INTENTLOG", "year still ok");}
-        } catch (Exception e) {
-        }
-        try {
-            currentCompany.setPhones(intent.getStringExtra("company_phone"));
-            ent_phone = (TextView) findViewById(R.id.textTelephon);
-            ent_phone.setText(currentCompany.getPhones());
-            Log.d("INTENTLOG", "phone still ok");
-        } catch (Exception e) {
-        }
-        try {
-            currentCompany.getContactPeople().setDirector(intent.getStringExtra("company_director"));
-            ent_phone = (TextView) findViewById(R.id.textTelephon);
-            ent_phone.setText(ent_phone.getText()+ "\nДиректор:"+ currentCompany.getContactPeople().getDirector());
-            Log.d("INTENTLOG", "director still ok");
-        } catch (Exception e) {
-        }
-        try {
-            currentCompany.getContactPeople().setManager(intent.getStringExtra("company_manager"));
-            ent_phone = (TextView) findViewById(R.id.textTelephon);
-            ent_phone.setText(ent_phone.getText()+ "\nМенеджер:"+ currentCompany.getContactPeople().getManager());
-            Log.d("INTENTLOG", "manager still ok");
-        } catch (Exception e) {
-        }
-        try {
-            currentCompany.setProductsAndOffers(intent.getStringExtra("company_products"));
-            ent_products = (TextView) findViewById(R.id.textProducts);
-            ent_products.setText(currentCompany.getProductsAndOffers());
-            Log.d("INTENTLOG", "prod still ok");
+            ent_name.setText(currentCompany.getName());*/
+            Log.d("infoPresenter", "slug still ok");
         } catch (Exception e) {
         }
 
 
-        presenter = new InfoPresenter(this, getApplicationContext());
+List<Company> tempList= new ArrayList<>();
+        tempList = presenter.initData();
+
+        Log.d("infoPresenter", "WOW ALL iS WORK FINE");
+        try {
+            Log.d("infoPresenter", "name is " + currentCompany.getName());
+            Log.d("infoPresenter", "slug "+currentCompany.getSlug());
+            Log.d("infoPresenter", "director is " + currentCompany.getContactPeople().getDirector());
+
+        }catch (Exception ignored){}
+        //presenter = new InfoPresenter(this, getApplicationContext());
 
 
         //productList = presenter.initDataProducts();
@@ -163,13 +99,90 @@ public class InfoActivity extends AppCompatActivity implements AllView {
 
 
     private void initializeData() {
+        try {
 
+            ent_mail = (TextView) findViewById(R.id.textMail);
+            ent_mail.setText(currentCompany.getEmails().get(0));
+            Log.d("INTENTLOG", "mail still ok");
+        } catch (Exception e) {
+        }
+        try {
+
+            ent_mail = (TextView) findViewById(R.id.textMail);
+
+                ent_mail.setText(ent_mail.getText() + "\nAdress:" + currentCompany.getAddress());
+                Log.d("INTENTLOG", "adress still ok");
+
+
+        } catch (Exception e) {
+        }
+        try {
+
+            ent_mail = (TextView) findViewById(R.id.textMail);
+            if(currentCompany.getSitesUrl()!=null) {
+                ent_mail.setText(ent_mail.getText()+ "\nSite URL::" + currentCompany.getSitesUrl());
+                Log.d("INTENTLOG", "site still ok");}
+        } catch (Exception e) {
+        }
+        try {
+
+            ent_reg = (TextView) findViewById(R.id.textRegion);
+            ent_reg.setText(currentCompany.getRegionName());
+            Log.d("INTENTLOG", "reg still ok");
+        } catch (Exception e) {
+        }
+        try {
+
+            ent_reg = (TextView) findViewById(R.id.textRegion);
+            if(currentCompany.getDescription()!=null) {
+                ent_reg.setText(ent_reg.getText() + "\n"+currentCompany.getDescription());
+                Log.d("INTENTLOG", "description still ok");}
+        } catch (Exception e) {
+        }
+        try {
+
+            ent_reg = (TextView) findViewById(R.id.textRegion);
+
+                ent_reg.setText(ent_reg.getText() + "\n"+currentCompany.getYearOfFoundation());
+                Log.d("INTENTLOG", "year still ok");
+        } catch (Exception e) {
+        }
+        try {
+
+            ent_phone = (TextView) findViewById(R.id.textTelephon);
+            ent_phone.setText(currentCompany.getPhones());
+            Log.d("INTENTLOG", "phone still ok");
+        } catch (Exception e) {
+        }
+        try {
+
+            ent_phone = (TextView) findViewById(R.id.textTelephon);
+            ent_phone.setText(ent_phone.getText()+ "\nДиректор:"+ currentCompany.getContactPeople().getDirector());
+            Log.d("INTENTLOG", "director still ok");
+        } catch (Exception e) {
+        }
+        try {
+
+            ent_phone = (TextView) findViewById(R.id.textTelephon);
+            ent_phone.setText(ent_phone.getText()+ "\nМенеджер:"+ currentCompany.getContactPeople().getManager());
+            Log.d("INTENTLOG", "manager still ok");
+        } catch (Exception e) {
+        }
+        try {
+
+            ent_products = (TextView) findViewById(R.id.textProducts);
+            ent_products.setText(currentCompany.getProductsAndOffers());
+            Log.d("INTENTLOG", "prod still ok");
+        } catch (Exception e) {
+        }
     }
 
 
     @Override
     public void initializeAdapter(List<Company> enterpriseList) {
-
+        currentCompany.setAll(enterpriseList.get(0));
+        Log.d("infoPresenter","in initializeAdapter(activity)mail "+currentCompany.getEmails().get(0));
+       initializeData();
     }
 
     @Override
@@ -300,5 +313,8 @@ public class InfoActivity extends AppCompatActivity implements AllView {
         payFragment.show(fm, "none tag");
     }
 
+    public void goBack(View view) {
+        this.finish();
+    }
 }
 

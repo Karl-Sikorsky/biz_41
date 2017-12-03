@@ -52,7 +52,44 @@
             android:visibility="visible"
             tools:text="@string/enterprise_name" />
 
+        <ImageView
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:background="#00000000"
+            android:onClick="goBack"
+            android:padding="1dp"
+
+
+            app:srcCompat="@drawable/ic_arrow_back_black_48dp" />
+
     </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="2.14"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp">
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#649e7e"
+        android:textColor="#ffffff"
+        android:onClick="upgrade"
+        android:text="@string/upgrade_company"
+
+        />
+    </LinearLayout>
 
 <LinearLayout
    android:layout_width="match_parent"
@@ -61,49 +98,52 @@
     android:layout_gravity="center_horizontal"
     android:layout_marginLeft="40dp"
     android:layout_marginRight="40dp"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="0dp"
 
     android:orientation="vertical"
     >
+
+
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:background="@drawable/shape_category"
-        android:orientation="vertical"
-        android:weightSum="3"
         android:layout_gravity="center_horizontal"
-        android:onClick="callPhone">
+        android:background="@drawable/shape_category"
+        android:onClick="callPhone"
+        android:orientation="vertical"
+        android:weightSum="3">
 
         <ImageView
             android:id="@+id/imagecall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-
-            android:padding="5dp"
-            android:src="@drawable/call"
-            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="8dp" />
+
+            android:layout_weight="1"
+            android:padding="2dp"
+            android:src="@drawable/call"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
             android:text="Зателефонувати"
             app:layout_constraintBottom_toBottomOf="@+id/imagecall"
             app:layout_constraintLeft_toRightOf="@+id/imagecall"
-            app:layout_constraintTop_toTopOf="@+id/imagecall"
-            android:layout_marginStart="8dp"
-            android:layout_marginRight="8dp"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginEnd="8dp" />
+            app:layout_constraintTop_toTopOf="@+id/imagecall" />
 
     </android.support.constraint.ConstraintLayout>
 </LinearLayout>
@@ -116,7 +156,7 @@
         android:orientation="vertical"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="0dp">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -130,15 +170,15 @@
 
             <ImageView
                 android:id="@+id/imagemail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_margin="15dp"
+                android:layout_marginBottom="8dp"
 
+                android:layout_weight="1"
                 android:padding="5dp"
                 android:src="@drawable/mail"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -161,23 +201,7 @@
         </android.support.constraint.ConstraintLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="2.14"
-        android:background="@android:drawable/dialog_holo_light_frame"
-        android:orientation="vertical"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#333366ff"
-            android:onClick="upgrade"
-            android:text="@string/upgrade_company" />
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -192,7 +216,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/more_info"
-        android:background="#3355dd99"
+        android:textColor="#ffffff"
+        android:background="#358bca"
         android:onClick="moreInfo"/>
 
     </LinearLayout>
@@ -209,7 +234,7 @@
         android:textColor="#dd4225" />
 
     <View android:layout_width="fill_parent"
-        android:layout_height="2dip"
+        android:layout_height="0.25dip"
         android:layout_margin="4dp"
         android:layout_marginLeft="10dp"
         android:background="#666666" />
@@ -225,7 +250,7 @@
         android:textColor="#666666" />
 
     <View android:layout_width="fill_parent"
-        android:layout_height="2dip"
+        android:layout_height="0.25dip"
         android:layout_margin="4dp"
         android:layout_marginLeft="10dp"
         android:background="#666666" />
@@ -238,7 +263,7 @@
         android:layout_marginLeft="10dp"
         android:textColor="#dd4225" />
     <View android:layout_width="fill_parent"
-        android:layout_height="2dip"
+        android:layout_height="0.25dip"
         android:layout_margin="4dp"
         android:layout_marginLeft="10dp"
         android:background="#666666" />
@@ -252,7 +277,7 @@
         android:layout_weight="1" />
 
     <View android:layout_width="fill_parent"
-        android:layout_height="2dip"
+        android:layout_height="0.25dip"
         android:layout_marginLeft="10dp"
         android:layout_margin="4dp"
         android:background="#666666" />
@@ -265,7 +290,7 @@
         android:text="@string/contacts"
         android:textColor="#dd4225" />
     <View android:layout_width="fill_parent"
-        android:layout_height="2dip"
+        android:layout_height="0.25dip"
         android:layout_margin="4dp"
         android:layout_marginLeft="10dp"
         android:background="#666666" />
@@ -277,7 +302,7 @@
         android:layout_marginLeft="10dp"
         android:layout_weight="1" />
     <View android:layout_width="fill_parent"
-        android:layout_height="2dip"
+        android:layout_height="0.25dip"
         android:layout_margin="4dp"
         android:layout_marginLeft="10dp"
         android:background="#666666" />
@@ -290,7 +315,7 @@
         android:text="@string/info"
         android:textColor="#dd4225" />
     <View android:layout_width="fill_parent"
-        android:layout_height="2dip"
+        android:layout_height="0.25dip"
         android:layout_margin="4dp"
         android:layout_marginLeft="10dp"
         android:background="#666666" />

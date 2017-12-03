@@ -28,6 +28,9 @@ public class ContactPeople {
         return director;
     }
 
+    public ContactPeople() {
+    }
+
     public void setDirector(String director) {
         this.director = director;
     }

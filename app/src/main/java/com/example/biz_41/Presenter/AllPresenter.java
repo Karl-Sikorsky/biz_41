@@ -19,6 +19,7 @@ public interface AllPresenter {
     void setOffset(int offset);
     int getAserts();
     void setAserts(int aserts);
+    void setSlug(String slug);
 
     void setQueryParams(String categoryIds, String regionIds);
 

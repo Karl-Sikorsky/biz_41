@@ -8,7 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 
 import com.example.biz_41.Model.Category;
@@ -31,6 +33,7 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         rvc=(RecyclerView)findViewById(R.id.rvc);
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
@@ -47,10 +50,21 @@ public class SearchActivity extends AppCompatActivity {
         initializeAdapter();
     }
     public boolean onCreateOptionsMenu(Menu menu) {
-
+        getMenuInflater().inflate(R.menu.menu_other, menu);
         getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.place_search_head));
         return super.onCreateOptionsMenu(menu);
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_back:
+                Intent intent = new Intent(SearchActivity.this, MainActivity.class);
+                startActivity(intent);
+                break;
+
+        }
+        return true;
     }
     private void initializeData() {
         categoriesList = new ArrayList<>();

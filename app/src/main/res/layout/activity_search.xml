@@ -54,7 +54,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="48dp"
+                android:layout_width="20dp"
                 android:layout_height="48dp"
                 android:src="@drawable/br_clasf" />
             <TextView
@@ -86,7 +86,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="48dp"
+                android:layout_width="20dp"
                 android:layout_height="48dp"
                 android:src="@drawable/reg_clasf" />
             <TextView

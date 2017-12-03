@@ -66,13 +66,15 @@ Log.d("intentcatcher", "catch intent oncreate");
                Log.d("searchlog","in main catch text = "+ text_search + " ; send to presenter");
                if (!((text_search==null)||text_search.trim().equals("")||(text_search.equals(" ")))){
                presenter.setSearchParam(text_search);
-               textSelected.setText(text_search);}
+               textSelected.setText(text_search);
+               Log.d("searchlog","catch status bar must bee as "+text_search);}
            }catch (Exception ignored){};
            String categoryIds = intent.getStringExtra("categoryIds");
            String regionIds = intent.getStringExtra("regionIds");
            String categoryNames = intent.getStringExtra("categoryNames");
            String regionNames = intent.getStringExtra("regionNames");
-           textSelected.setText(categoryNames+"; "+regionNames);
+           if((categoryNames!=null)&&(regionNames!=null)){
+           textSelected.setText(categoryNames+"; "+regionNames);}
            Log.d("querycontrol", "send query with = "+ categoryIds + " and "+ regionIds);
            presenter.setQueryParams(categoryIds,regionIds);
 
@@ -125,9 +127,9 @@ Log.d("intentcatcher", "catch intent oncreate");
             Log.d("INTENTLOG", this.enterpriseList.get(position).getName());
             try {
                 if(this.enterpriseList.get(position).getName()!=null){
-                intent.putExtra("company_name", this.enterpriseList.get(position).getName());}
+                intent.putExtra("company_slug", this.enterpriseList.get(position).getSlug());}
             }catch (Exception ignored){};
-            try {
+            /*try {
                 String mail = this.enterpriseList.get(position).getEmails().get(0);
                 if(mail!=null){
                 intent.putExtra("company_mail", mail );}
@@ -159,7 +161,7 @@ Log.d("intentcatcher", "catch intent oncreate");
             }catch (Exception ignored){};
             try {if(this.enterpriseList.get(position).getSitesUrl()!=null){
                 intent.putExtra("company_sitesUrl", this.enterpriseList.get(position).getSitesUrl());}
-            }catch (Exception ignored){};
+            }catch (Exception ignored){};*/
 Log.d("INTENTLOG", "intent start2");
             startActivity(intent);
         });

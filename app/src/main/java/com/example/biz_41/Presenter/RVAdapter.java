@@ -35,7 +35,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.EnterpriseViewHold
         TextView telephon;
         TextView city;
         TextView category;
-        SimpleRatingBar rating;
+        //SimpleRatingBar rating;
 
         EnterpriseViewHolder(View itemView) {
             super(itemView);
@@ -45,7 +45,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.EnterpriseViewHold
             telephon = (TextView)itemView.findViewById(R.id.telephon);
 
             city = (TextView)itemView.findViewById(R.id.city);
-            rating = (SimpleRatingBar)itemView.findViewById(R.id.simple_rating_bar);
+            //rating = (SimpleRatingBar)itemView.findViewById(R.id.simple_rating_bar);
 
         }
     }
@@ -110,8 +110,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.EnterpriseViewHold
         personViewHolder.city.setText(enterprises.get(i).getRegionName());
         //personViewHolder.category.setText(enterprises.get(i).getCategoriesId().get(0));
         personViewHolder.telephon.setText(enterprises.get(i).getPhones());
-        personViewHolder.rating.setRating(enterprises.get(i).getRating());
-        personViewHolder.rating.setEnabled(false);
+       // personViewHolder.rating.setRating(enterprises.get(i).getRating());
+       // personViewHolder.rating.setEnabled(false);
 
 
 

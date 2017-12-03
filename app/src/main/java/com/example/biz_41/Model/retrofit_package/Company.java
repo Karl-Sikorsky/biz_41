@@ -181,6 +181,9 @@ public class Company extends RealmObject {
         this.companyRegionsId = company.getCompanyRegionsId();
         this.sitesUrl = company.getSitesUrl();
         this.rating = company.getRating();
+        this.contactPeople = company.getContactPeople();
+        this.yearOfFoundation = company.getYearOfFoundation();
+        this.emails = company.getEmails();
     }
     public void setAll(Company company){
         this.id = company.getId();
@@ -196,6 +199,9 @@ public class Company extends RealmObject {
         this.companyRegionsId = company.getCompanyRegionsId();
         this.sitesUrl = company.getSitesUrl();
         this.rating = company.getRating();
+        this.contactPeople = company.getContactPeople();
+        this.yearOfFoundation = company.getYearOfFoundation();
+        this.emails = company.getEmails();
     }
     public Company(String id, String slug, String name, String description, String phones, String address, String skype, String regionName, String productsAndOffers, List<String> categoriesId, List<String> companyRegionsId, String sitesUrl) {
 
@@ -212,6 +218,8 @@ public class Company extends RealmObject {
         this.companyRegionsId = companyRegionsId;
         this.sitesUrl = sitesUrl;
         this.rating = 3;
+        this.contactPeople = new ContactPeople();
+
     }
 
     public Company(String id, String slug, String name, String logo, String description, List<String> emails, String phones, String postAddress, String address, String faxes, ContactPeople contactPeople, OpenHours openHours, String skype, Integer employeesNumber, String yearOfFoundation, String regionName, BankDetails bankDetails, String productsAndOffers, List<String> branches, String trademarks, List<String> categoriesId, List<String> companyRegionsId, List<String> exportRegionsID, List<String> importRegionsId, String qualityStandarts, String sitesUrl) {

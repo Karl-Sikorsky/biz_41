@@ -19,4 +19,7 @@ public interface BizGidApi {
 
     @GET("api/enterprises/text-search/{text}?")
     Observable<List<Company>> getDataByText(@Path(value = "text", encoded = true)  String text, @Query("offset") int offset, @Query("amount") int amount);
+
+    @GET("api/enterprises/{enterpriseName}")
+    Observable<Company> getEnterprise(@Path(value = "enterpriseName", encoded = true) String enterpriseName);
 }
